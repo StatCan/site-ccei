@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ef81088054729e7fc39f3c6d862eb053",
+    "content-hash": "1089e48047807f043e0706875b505682",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -144,16 +144,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.133.38",
+            "version": "3.133.39",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "5ec9442162d83f94918bc17136a2b674a04784e5"
+                "reference": "0e3b9e497bd39063cb504115c726d369d8f4d455"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/5ec9442162d83f94918bc17136a2b674a04784e5",
-                "reference": "5ec9442162d83f94918bc17136a2b674a04784e5",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/0e3b9e497bd39063cb504115c726d369d8f4d455",
+                "reference": "0e3b9e497bd39063cb504115c726d369d8f4d455",
                 "shasum": ""
             },
             "require": {
@@ -224,7 +224,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-03-17T18:16:01+00:00"
+            "time": "2020-03-18T18:13:04+00:00"
         },
         {
             "name": "bower-asset/cropper",
@@ -2219,50 +2219,6 @@
             "time": "2020-01-08T19:53:19+00:00"
         },
         {
-            "name": "drupal-composer/drupal-scaffold",
-            "version": "2.6.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/drupal-composer/drupal-scaffold.git",
-                "reference": "13c1ffc7dd4925cb03707759128b85c0cd6276f8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/drupal-composer/drupal-scaffold/zipball/13c1ffc7dd4925cb03707759128b85c0cd6276f8",
-                "reference": "13c1ffc7dd4925cb03707759128b85c0cd6276f8",
-                "shasum": ""
-            },
-            "require": {
-                "composer-plugin-api": "^1.0.0",
-                "composer/semver": "^1.4",
-                "php": "^5.5.9|>=7.0.8"
-            },
-            "require-dev": {
-                "composer/composer": "dev-master",
-                "g1a/composer-test-scenarios": "^2.1.0",
-                "phpunit/phpunit": "^6",
-                "squizlabs/php_codesniffer": "^2.8"
-            },
-            "type": "composer-plugin",
-            "extra": {
-                "class": "DrupalComposer\\DrupalScaffold\\Plugin",
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "DrupalComposer\\DrupalScaffold\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "description": "Composer Plugin for updating the Drupal scaffold files when using drupal/core",
-            "time": "2019-03-30T10:41:38+00:00"
-        },
-        {
             "name": "drupal/acquia_connector",
             "version": "1.19.0",
             "source": {
@@ -3539,6 +3495,53 @@
             ],
             "description": "Drupal is an open source content management platform powering millions of websites and applications.",
             "time": "2020-02-01T19:51:15+00:00"
+        },
+        {
+            "name": "drupal/core-composer-scaffold",
+            "version": "8.8.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/drupal/core-composer-scaffold.git",
+                "reference": "4825cb5234c28dff79ad298db582dfb23ff4ca59"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/drupal/core-composer-scaffold/zipball/4825cb5234c28dff79ad298db582dfb23ff4ca59",
+                "reference": "4825cb5234c28dff79ad298db582dfb23ff4ca59",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0.0",
+                "php": ">=7.0.8"
+            },
+            "conflict": {
+                "drupal-composer/drupal-scaffold": "*"
+            },
+            "require-dev": {
+                "composer/composer": "^1.8@stable"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Drupal\\Composer\\Plugin\\Scaffold\\Plugin",
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Drupal\\Composer\\Plugin\\Scaffold\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "description": "A flexible Composer project scaffold builder.",
+            "homepage": "https://www.drupal.org/project/drupal",
+            "keywords": [
+                "drupal"
+            ],
+            "time": "2020-03-10T10:15:17+00:00"
         },
         {
             "name": "drupal/core_context",
@@ -14101,19 +14104,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StatCan/ccei.git",
-                "reference": "dbe713d82fd2bf92afe53d3de418666d08ab5bc6"
+                "reference": "752d87decef2b267c18268a4455b698baf33117c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StatCan/ccei/zipball/dbe713d82fd2bf92afe53d3de418666d08ab5bc6",
-                "reference": "dbe713d82fd2bf92afe53d3de418666d08ab5bc6",
+                "url": "https://api.github.com/repos/StatCan/ccei/zipball/752d87decef2b267c18268a4455b698baf33117c",
+                "reference": "752d87decef2b267c18268a4455b698baf33117c",
                 "shasum": ""
             },
             "require": {
                 "acquia/lightning": "4.1.2",
                 "composer/installers": "^1.2",
                 "cweagans/composer-patches": "^1.6.7",
-                "drupal-composer/drupal-scaffold": "^2.0.0",
+                "drupal/core-composer-scaffold": "*",
                 "drupalwxt/wxt": "3.0.7"
             },
             "require-dev": {
@@ -14121,7 +14124,7 @@
                 "bex/behat-screenshot": "^1.2",
                 "composer/composer": "^1.4",
                 "drupal/coder": "^8.3.7",
-                "drupal/console": "~1.8.0",
+                "drupal/console": "~1.9.0",
                 "drupal/devel": "^1.0",
                 "drupal/drupal-extension": "~3.4.0",
                 "drush/drush": "^9.0",
@@ -14133,22 +14136,24 @@
             },
             "type": "drupal-profile",
             "extra": {
+                "drupal-scaffold": {
+                    "locations": {
+                        "web-root": "html/"
+                    }
+                },
                 "installer-types": [
                     "bower-asset",
                     "npm-asset"
                 ],
                 "installer-paths": {
-                    "drush/contrib/{$name}": [
-                        "type:drupal-drush"
-                    ],
                     "html/core": [
                         "type:drupal-core"
                     ],
                     "html/libraries/{$name}": [
+                        "type:drupal-console-library",
                         "type:drupal-library",
                         "type:bower-asset",
-                        "type:npm-asset",
-                        "type:drupal-console-library"
+                        "type:npm-asset"
                     ],
                     "html/modules/custom/{$name}": [
                         "drupal/wxt_library"
@@ -14164,9 +14169,15 @@
                     ],
                     "html/themes/contrib/{$name}": [
                         "type:drupal-theme"
+                    ],
+                    "drush/contrib/{$name}": [
+                        "type:drupal-drush"
                     ]
                 },
                 "enable-patching": true,
+                "patchLevel": {
+                    "drupal/core": "-p2"
+                },
                 "patches": {
                     "drupal/jsonapi": {
                         "3034626 - Fatal error after security update without updating Drupal core.": "https://www.drupal.org/files/issues/2019-02-21/fatal_error_after_updating_the_module-3034626-2.patch"
@@ -14187,15 +14198,8 @@
                 }
             },
             "scripts": {
-                "post-install-cmd": [
-                    "@composer drupal-scaffold"
-                ],
-                "drupal-scaffold": [
-                    "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
-                ],
-                "release-version": [
-                    "Drupal\\ccei\\Composer\\ReleaseVersion::execute"
-                ]
+                "post-install-cmd": [],
+                "post-update-cmd": []
             },
             "license": [
                 "GPL-2.0+"
@@ -14205,7 +14209,7 @@
                 "source": "https://github.com/StatCan/ccei/tree/8.x-1.x",
                 "issues": "https://github.com/StatCan/ccei/issues"
             },
-            "time": "2020-03-18T16:37:48+00:00"
+            "time": "2020-03-18T18:59:48+00:00"
         },
         {
             "name": "webflo/drupal-finder",
