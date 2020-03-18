@@ -1,0 +1,75 @@
+# Docker Compose (v2)
+
+version: '2'
+
+services:
+
+  web:
+    extends:
+      file: docker/docker-common.yml
+      service: web_dev
+    depends_on:
+      - db
+
+  cli:
+    extends:
+      file: docker/docker-common.yml
+      service: cli
+    depends_on:
+      - db
+      - web
+    environment:
+      - DRUPAL_SETTINGS=development
+    volumes:
+      - ./:/var/www
+
+  db:
+    extends:
+      file: docker/docker-common.yml
+      service: db
+
+  nginx:
+    extends:
+      file: docker/docker-common.yml
+      service: nginx_dev
+    depends_on:
+      - web
+
+  cron:
+    extends:
+      file: docker/docker-common.yml
+      service: cron
+    depends_on:
+     - db
+     - web
+
+  hub:
+    extends:
+      file: docker/docker-common.yml
+      service: hub
+    depends_on:
+     - db
+     - web
+
+  firefox:
+    extends:
+      file: docker/docker-common.yml
+      service: firefox
+    depends_on:
+     - db
+     - web
+     - hub
+     - proxy
+
+  proxy:
+    extends:
+      file: docker/docker-common.yml
+      service: proxy
+
+  mailhog:
+    extends:
+      file: docker/docker-common.yml
+      service: mailhog
+
+volumes:
+  db_data:

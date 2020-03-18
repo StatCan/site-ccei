@@ -1,0 +1,81 @@
+# Docker Compose (v2)
+
+version: "2"
+services:
+
+  cli_scripts:
+    extends:
+      file: docker/docker-common.yml
+      service: cli_scripts
+
+  web:
+    extends:
+      file: docker/docker-common.yml
+      service: web_ci
+    depends_on:
+      - db
+    volumes:
+      - ./docker/conf/drupal/settings.php:/var/www/html/sites/default/settings.php:ro
+      - files_data:/var/www/html/sites/default/files
+      - files_private_data:/var/www/files_private
+
+  cli:
+    extends:
+      file: docker/docker-common.yml
+      service: cli
+    depends_on:
+      - db
+      - web
+    environment:
+      - DRUPAL_SETTINGS=production
+    volumes:
+      - ./docker/conf/drupal/settings.php:/var/www/html/sites/default/settings.php
+      - ./docker/conf/drupal/default.settings.php:/var/www/html/sites/default/default.settings.php:ro
+      - files_data:/var/www/html/sites/default/files
+      - files_private_data:/var/www/files_private
+      - ./docker/bin:/var/www/docker/bin
+
+  db:
+    extends:
+      file: docker/docker-common.yml
+      service: db
+
+  nginx:
+    extends:
+      file: docker/docker-common.yml
+      service: nginx_ci
+    depends_on:
+      - web
+
+  hub:
+    extends:
+      file: docker/docker-common.yml
+      service: hub
+    depends_on:
+     - db
+     - web
+
+  firefox:
+    extends:
+      file: docker/docker-common.yml
+      service: firefox
+    depends_on:
+     - db
+     - web
+     - hub
+     - proxy
+
+  proxy:
+    extends:
+      file: docker/docker-common.yml
+      service: proxy
+
+  solr:
+    extends:
+      file: docker/docker-common.yml
+      service: solr
+
+volumes:
+  db_data:
+  files_data:
+  files_private_data:
