@@ -1,4 +1,4 @@
-Composer Project template for CCEI
+Composer Project Template for CCEI
 ==================================
 
 [![Build Status][ci-badge]][ci]
@@ -24,7 +24,7 @@ The `composer.json` file calls the following dependencies:
 
 * [WxT][wxt]
 * [CCEI Core][ccei_core]
-* [CCEI Bootstrap][ccei_experiments]
+* [CCEI Bootstrap][ccei_bootstrap]
 
 ### WxT
 
@@ -32,11 +32,11 @@ The [Drupal WxT][wxt] distribution is a web content management system which assi
 
 ### CCEI Core
 
-The [CCEI Core][ccei_core] module houses all of the additional customization that are made on top of Drupal WxT. Any additional contributed dependencies are declared in the [composer.json][ccei_core_composer] file and are installed in the [ccei_core.info.yml][ccei_core_info] file. Normally this can all be done in an (sub) installation profile but for the moment to reduce complexity this is the current route. All of the custom configuration for things such as `asset_injector`, `ckeditor templates`, and `webform` have been exported in the [config][ccei_core_config] folder.
+The [CCEI Core][ccei_core] module houses all of the additional customization that are made on top of Drupal WxT. Normally this can all be done in an (sub) installation profile but for the moment to reduce complexity this is the current route.
 
 ### CCEI Bootstrap
 
-The [CCEI Bootstra][ccei_bootstrap] theme which itself is a sub theme of [WxT Bootstrap][wxt_bootstrap] houses all of the additional theming related customizations that are made on top of of [Drupal WxT][wxt]. Any additional contributed dependencies are declared in the [composer.json][ccei_bootstrap_composer] file and are installed in the [ccei_core.info.yml][ccei_bootstrap_info] file. All of the custom theme configuration have been exported in the [config][ccei_bootstrap_config] folder.
+The [CCEI Bootstrap][ccei_bootstrap] theme which itself is a sub theme of [WxT Bootstrap][wxt_bootstrap] houses all of the additional theming related customizations that are made on top of of [Drupal WxT][wxt].
 
 ## Project
 
@@ -67,14 +67,8 @@ List of common commands are as follows:
 | Updating Drupal Core exclusively                | ```composer update drupal/core```                      |
 
 
-[ccei_core]:                  https://github.com/statcan/ccei_core
-[ccei_core_composer]:         https://github.com/statcan/ccei_core/blob/8.x-1.x/composer.json
-[ccei_core_info]:             https://github.com/statcan/ccei_core/blob/8.x-1.x/ccei_core.info.yml
-[ccei_core_config]:           https://github.com/statcan/ccei_core/tree/8.x-1.x/config
-[ccei_bootstrap]:             https://github.com/statcan/ccei_bootstrap
-[ccei_bootstrap_composer]:    https://github.com/statcan/ccei_bootstrap/blob/8.x-1.x/composer.json
-[ccei_bootstrap_info]:        https://github.com/statcan/ccei_bootstrap/blob/8.x-1.x/ccei_core.info.yml
-[ccei_bootstrap_config]:      https://github.com/statcan/ccei_bootstrap/tree/8.x-1.x/config
+[ccei_core]:                  https://github.com/StatCan/ccei/tree/8.x-1.x/modules/custom/ccei_core
+[ccei_bootstrap]:             https://github.com/StatCan/ccei/tree/8.x-1.x/themes/custom/ccei_bootstrap
 [ci]:                         https://travis-ci.org/statcan/site-ccei
 [ci-badge]:                   https://travis-ci.org/statcan/site-ccei.svg?branch=8.x
 [composer]:                   https://getcomposer.org
