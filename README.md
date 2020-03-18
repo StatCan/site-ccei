@@ -75,8 +75,8 @@ List of common commands are as follows:
 [ccei_bootstrap_composer]:    https://github.com/statcan/ccei_bootstrap/blob/8.x-1.x/composer.json
 [ccei_bootstrap_info]:        https://github.com/statcan/ccei_bootstrap/blob/8.x-1.x/ccei_core.info.yml
 [ccei_bootstrap_config]:      https://github.com/statcan/ccei_bootstrap/tree/8.x-1.x/config
-[ci]:                         https://travis-ci.com/statcan/site-ccei
-[ci-badge]:                   https://travis-ci.com/statcan/site-ccei.svg?branch=8.x
+[ci]:                         https://travis-ci.org/statcan/site-ccei
+[ci-badge]:                   https://travis-ci.org/statcan/site-ccei.svg?branch=8.x
 [composer]:                   https://getcomposer.org
 [node]:                       https://nodejs.org
 [wxt]:                        https://github.com/drupalwxt/wxt
