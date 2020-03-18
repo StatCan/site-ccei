@@ -53,21 +53,10 @@
         }
     ],
     "scripts": {
-      "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-      "pre-install-cmd": [
-          "DrupalWxT\\WxT\\ScriptHandler::checkComposerVersion"
-      ],
-      "pre-update-cmd": [
-          "DrupalWxT\\WxT\\ScriptHandler::checkComposerVersion"
-      ],
-      "post-install-cmd": [
-          "@composer drupal-scaffold",
-          "DrupalWxT\\WxT\\ScriptHandler::deployLibraries"
-      ],
-      "post-update-cmd": [
-          "@composer drupal-scaffold",
-          "DrupalWxT\\WxT\\ScriptHandler::deployLibraries"
-      ]
+        "post-create-project-cmd": "rm -r -f .travis.yml behat.yml .travis-ci",
+        "quick-start": [
+            "composer install"
+        ]
     },
     "extra": {
         "drupal-scaffold": {
