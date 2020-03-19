@@ -63,13 +63,19 @@ jobs:
         namespace: ${{ env.NAMESPACE }}
     # Clone the Helm chart
     - run: |
+        pwd
         git clone https://github.com/drupalwxt/helm-drupal.git
+        ls
+    - run: |
+        pwd
+        ls
     # Baking the helm chart to generate the manifests to deploy
     - uses: azure/k8s-bake@v1
       with:
         renderEngine: 'helm2'
         helmChart: './helm-drupal/drupal/'
         helm-version: 'v2.16.1'
+        releaseName: 'ccei'
         overrides: |
           ingress.hosts[0]:${{ secrets.INGRESS_HOST }}
           ingress.path:/*
