@@ -81,7 +81,7 @@ jobs:
             username: ""
         EOF
     # Baking the helm chart to generate the manifests to deploy
-    - uses: azure/k8s-bake@v1
+    - uses: StatCan/k8s-bake@feat-helm-init
       with:
         renderEngine: 'helm2'
         helmChart: './helm-drupal/drupal/'
