@@ -73,11 +73,13 @@ jobs:
         releaseName: 'ccei'
         silent: 'false'
         overrides: |
+          ingress.enabled:true
           ingress.hosts[0]:${{ secrets.INGRESS_HOST }}
           ingress.path:/*
           drupal.image:${{ env.REGISTRY_NAME }}.azurecr.io/site-ccei
           drupal.tag:${{ github.sha }}
           drupal.imagePullSecrets[0].name:${{ env.REGISTRY_NAME }}-registry-connection
+          drupal.password:${{ secrets.DRUPAL_PASSWORD }}
           drupal.disableDefaultFilesMount:true
           drupal.volumes[0].name:files-public
           drupal.volumes[0].azureFile.secretName:ccei-storage
