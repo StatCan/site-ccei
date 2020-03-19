@@ -75,7 +75,7 @@ jobs:
         overrides: |
           ingress.enabled:true
           ingress.hosts[0]:${{ secrets.INGRESS_HOST }}
-          ingress.annotations."kubernetes\.io/ingress\.class":istio
+          ingress.annotations.kubernetes\.io/ingress\.class:istio
           ingress.path:/*
           drupal.image:${{ env.REGISTRY_NAME }}.azurecr.io/site-ccei
           drupal.tag:${{ github.sha }}
