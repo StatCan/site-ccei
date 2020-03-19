@@ -63,12 +63,23 @@ jobs:
         namespace: ${{ env.NAMESPACE }}
     # Clone the Helm chart
     - run: |
-        pwd
         git clone https://github.com/drupalwxt/helm-drupal.git
-        ls
+    # Initial helm
     - run: |
-        pwd
-        ls
+        mkdir -p $HOME/.helm/repository
+        cat > $HOME/.helm/repository/repositories.yaml <<EOF
+          apiVersion: v1
+          generated: "2019-01-19T16:10:26.276307-05:00"
+          repositories:
+          - caFile: ""
+            cache: /Users/zachary/.helm/repository/cache/stable-index.yaml
+            certFile: ""
+            keyFile: ""
+            name: stable
+            password: ""
+            url: https://kubernetes-charts.storage.googleapis.com
+            username: ""
+        EOF
     # Baking the helm chart to generate the manifests to deploy
     - uses: azure/k8s-bake@v1
       with:
