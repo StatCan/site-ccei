@@ -81,6 +81,8 @@ jobs:
           drupal.tag:${{ github.sha }}
           drupal.imagePullSecrets[0].name:${{ env.REGISTRY_NAME }}-registry-connection
           drupal.password:${{ secrets.DRUPAL_PASSWORD }}
+          drupal.profile:ccei
+          drupal.wxtTheme:theme-gcweb
           drupal.disableDefaultFilesMount:true
           drupal.volumes[0].name:files-public
           drupal.volumes[0].azureFile.secretName:ccei-storage
