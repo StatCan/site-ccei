@@ -76,7 +76,7 @@ jobs:
           ingress.hosts[0]:${{ secrets.INGRESS_HOST }}
           ingress.path:/*
           drupal.image:${{ env.REGISTRY_NAME }}.azurecr.io/site-ccei:${{ github.sha }}
-          drupal.imagePullSecrets[0]:${{ env.REGISTRY_NAME }}-registry-connection
+          drupal.imagePullSecrets[0].name:${{ env.REGISTRY_NAME }}-registry-connection
           drupal.disableDefaultFilesMount:true
           drupal.volumes[0].name:files-public
           drupal.volumes[0].azureFile.secretName:ccei-storage
@@ -96,7 +96,7 @@ jobs:
           drupal.initContainers[0].volumeMounts[0].name:files-public
           drupal.initContainers[0].volumeMounts[0].mountPath:/files
           nginx.imageimage:${{ env.REGISTRY_NAME }}.azurecr.io/site-ccei:${{ github.sha }}-nginx
-          nginx.imagePullSecrets[0]:${{ env.REGISTRY_NAME }}-registry-connection
+          nginx.imagePullSecrets[0].name:${{ env.REGISTRY_NAME }}-registry-connection
           nginx.volumes[0].name:files-public
           nginx.volumes[0].azureFile.secretName:ccei-storage
           nginx.volumes[0].azureFile.shareName:ccei-public
