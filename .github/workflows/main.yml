@@ -20,6 +20,7 @@ env:
   REGISTRY_NAME: k8sccextx01acr
   CLUSTER_NAME: k8s-canadacentral-ext-01-aks
   CLUSTER_RESOURCE_GROUP: k8s-canadacentral-ext-01-aks
+  STORAGE_ACCOUNT_NAME: k8sdrupal
   NAMESPACE: wcms
 jobs:
   build:
@@ -40,35 +41,119 @@ jobs:
         docker build --build-arg BASE_IMAGE=${{ env.REGISTRY_NAME }}.azurecr.io/site-ccei:${{ github.sha }} -f docker/images/nginx/Dockerfile -t ${{ env.REGISTRY_NAME }}.azurecr.io/site-ccei:${{ github.sha }}-nginx .
         docker push ${{ env.REGISTRY_NAME }}.azurecr.io/site-ccei:${{ github.sha }}-nginx
     # Set the target Azure Kubernetes Service (AKS) cluster.
-    # - uses: azure/aks-set-context@v1
-    #   with:
-    #     creds: '${{ secrets.AZURE_CREDENTIALS }}'
-    #     cluster-name: ${{ env.CLUSTER_NAME }}
-    #     resource-group: ${{ env.CLUSTER_RESOURCE_GROUP }}
-    # # Create namespace if doesn't exist
-    # - run: |
-    #     kubectl create namespace ${{ env.NAMESPACE }} --dry-run -o json | kubectl apply -f -
-    # # Create imagepullsecret for Azure Container registry (ACR)
-    # - uses: azure/k8s-create-secret@v1
-    #   with:
-    #     container-registry-url: ${{ env.REGISTRY_NAME }}.azurecr.io
-    #     container-registry-username: ${{ secrets.REGISTRY_USERNAME }}
-    #     container-registry-password: ${{ secrets.REGISTRY_PASSWORD }}
-    #     secret-name: ${{ env.REGISTRY_NAME }}-registry-connection
-    #     namespace: ${{ env.NAMESPACE }}
-    # # Baking the helm chart to generate the manifests to deploy
-    # - uses: azure/k8s-bake@v1
-    #   with:
-    #     renderEngine: 'helm2'
-    #     helmChart: './my-helm-chart/'
-    #     helm-version: 'latest'
-    #   id: bake
-    # # Deploy app to AKS
-    # - uses: azure/k8s-deploy@v1
-    #   with:
-    #     manifests: ${{ steps.bake.outputs.manifestsBundle }}
-    #     images: |
-    #       ${{ env.REGISTRY_NAME }}.azurecr.io/myimage:${{ github.sha }}
-    #     imagepullsecrets: |
-    #       ${{ env.REGISTRY_NAME }}-registry-connection
-    #     namespace: ${{ env.NAMESPACE }}
+    - uses: azure/aks-set-context@v1
+      with:
+        creds: '${{ secrets.AZURE_CREDENTIALS }}'
+        cluster-name: ${{ env.CLUSTER_NAME }}
+        resource-group: ${{ env.CLUSTER_RESOURCE_GROUP }}
+    # Create imagepullsecret for Azure Container registry (ACR)
+    - uses: azure/k8s-create-secret@v1
+      with:
+        container-registry-url: ${{ env.REGISTRY_NAME }}.azurecr.io
+        container-registry-username: ${{ secrets.REGISTRY_USERNAME }}
+        container-registry-password: ${{ secrets.REGISTRY_PASSWORD }}
+        secret-name: ${{ env.REGISTRY_NAME }}-registry-connection
+        namespace: ${{ env.NAMESPACE }}
+    # Create secret for Azure Files mount
+    - uses: azure/k8s-create-secret@v1
+      with:
+        secret-type: generic
+        arguments: --from-literal=azurestorageaccountname=${{ env.STORAGE_ACCOUNT_NAME }} --from-literal=azurestorageaccountkey=${{ secrets.STORAGE_KEY }}
+        secret-name: ccei-storage
+        namespace: ${{ env.NAMESPACE }}
+    # Clone the Helm chart
+    - run: |
+        git clone https://github.com/drupalwxt/helm-drupal.git
+    # Baking the helm chart to generate the manifests to deploy
+    - uses: azure/k8s-bake@v1
+      with:
+        renderEngine: 'helm2'
+        helmChart: './helm-drupal/drupal/'
+        helm-version: '2.16.1'
+        overrides: |
+          ingress:
+            hosts:
+              - ${{ secrets.INGRESS_HOST }}
+            path: /*
+
+          drupal:
+            image: ${{ env.REGISTRY_NAME }}.azurecr.io/site-ccei:${{ github.sha }}
+            imagePullSecrets:
+              - ${{ env.REGISTRY_NAME }}-registry-connection
+
+            # Allows custom /var/www/html/sites/default/files and /var/www/private mounts
+            disableDefaultFilesMount: true
+
+            # kubectl create secret generic ccei-storage --from-literal=azurestorageaccountname=$STORAGE_ACCOUNT_NAME --from-literal=azurestorageaccountkey=$STORAGE_KEY -n $NAMESPACE
+            volumes:
+              - name: files-public
+                azureFile:
+                  secretName: ccei-storage
+                  shareName: ccei-public
+              - name: files-private
+                azureFile:
+                  secretName: ccei-storage
+                  shareName: ccei-private
+
+            volumeMounts:
+              - name: files-public
+                mountPath: /var/www/html/sites/default/files
+              - name: files-private
+                mountPath: /var/www/private
+
+            initContainers:
+              # Pre-create the media-icons folder
+              - name: init-media-icons-folder
+                image: alpine:3.10
+                command:
+                  - mkdir
+                  - -p
+                  - /files/media-icons/generic
+                volumeMounts:
+                  - name: files-public
+                    mountPath: /files
+
+          nginx:
+            image: ${{ env.REGISTRY_NAME }}.azurecr.io/site-ccei:${{ github.sha }}-nginx
+            imagePullSecrets:
+              - ${{ env.REGISTRY_NAME }}-registry-connection
+
+            # kubectl create secret generic ccei-storage --from-literal=azurestorageaccountname=$STORAGE_ACCOUNT_NAME --from-literal=azurestorageaccountkey=$STORAGE_KEY -n $NAMESPACE
+            volumes:
+              - name: files-public
+                azureFile:
+                  secretName: ccei-storage
+                  shareName: ccei-public
+              - name: files-private
+                azureFile:
+                  secretName: ccei-storage
+                  shareName: ccei-private
+
+            volumeMounts:
+              - name: files-public
+                mountPath: /var/www/html/sites/default/files
+              - name: files-private
+                mountPath: /var/www/private
+
+          mysql:
+            imageTag: 5.7.28
+
+            mysqlPassword: ${{ secrets.MYSQL_PASSWORD }}
+            mysqlRootPassword: ${{ secrets.MYSQL_ROOT_PASSWORD }}
+
+            persistence:
+              enabled: true
+              storageClass: managed-premium
+              size: 256Gi
+
+          files:
+            provider: none
+
+          minio:
+            enabled: false
+      id: bake
+    # Deploy app to AKS
+    - uses: azure/k8s-deploy@v1
+      with:
+        manifests: ${{ steps.bake.outputs.manifestsBundle }}
+        namespace: ${{ env.NAMESPACE }}
