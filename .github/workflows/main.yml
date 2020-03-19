@@ -106,7 +106,7 @@ jobs:
           drupal.volumeMounts[0].mountPath:/var/www/html/sites/default/files
           mysql.imageTag:5.7.28
           mysql.mysqlPassword:${{ secrets.MYSQL_PASSWORD }}
-          mysql.mysqlRootPassword: ${{ secrets.MYSQL_ROOT_PASSWORD }}
+          mysql.mysqlRootPassword:${{ secrets.MYSQL_ROOT_PASSWORD }}
           mysql.persistence.enabled:true
           mysql.persistence.storageClass:managed-premium
           mysql.persistence.size:256Gi
