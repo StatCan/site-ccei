@@ -76,6 +76,7 @@ jobs:
         helmChart: './helm-drupal/drupal/'
         helm-version: 'v2.16.1'
         releaseName: 'ccei'
+        silent: 'false'
         overrides: |
           ingress.hosts[0]:${{ secrets.INGRESS_HOST }}
           ingress.path:/*
