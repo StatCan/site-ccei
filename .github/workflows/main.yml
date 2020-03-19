@@ -75,6 +75,7 @@ jobs:
         overrides: |
           ingress.enabled:true
           ingress.hosts[0]:${{ secrets.INGRESS_HOST }}
+          ingress.annotations."kubernetes\.io/ingress\.class":istio
           ingress.path:/*
           drupal.image:${{ env.REGISTRY_NAME }}.azurecr.io/site-ccei
           drupal.tag:${{ github.sha }}
@@ -104,8 +105,8 @@ jobs:
           nginx.volumes[0].name:files-public
           nginx.volumes[0].azureFile.secretName:ccei-storage
           nginx.volumes[0].azureFile.shareName:ccei-public
-          drupal.volumeMounts[0].name:files-public
-          drupal.volumeMounts[0].mountPath:/var/www/html/sites/default/files
+          nginx.volumeMounts[0].name:files-public
+          nginx.volumeMounts[0].mountPath:/var/www/html/sites/default/files
           mysql.imageTag:5.7.28
           mysql.mysqlPassword:${{ secrets.MYSQL_PASSWORD }}
           mysql.mysqlRootPassword:${{ secrets.MYSQL_ROOT_PASSWORD }}
