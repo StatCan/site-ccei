@@ -71,86 +71,43 @@ jobs:
         helmChart: './helm-drupal/drupal/'
         helm-version: 'v2.16.1'
         overrides: |
-          ingress:
-            hosts:
-              - ${{ secrets.INGRESS_HOST }}
-            path: /*
-
-          drupal:
-            image: ${{ env.REGISTRY_NAME }}.azurecr.io/site-ccei:${{ github.sha }}
-            imagePullSecrets:
-              - ${{ env.REGISTRY_NAME }}-registry-connection
-
-            # Allows custom /var/www/html/sites/default/files and /var/www/private mounts
-            disableDefaultFilesMount: true
-
-            # kubectl create secret generic ccei-storage --from-literal=azurestorageaccountname=$STORAGE_ACCOUNT_NAME --from-literal=azurestorageaccountkey=$STORAGE_KEY -n $NAMESPACE
-            volumes:
-              - name: files-public
-                azureFile:
-                  secretName: ccei-storage
-                  shareName: ccei-public
-              - name: files-private
-                azureFile:
-                  secretName: ccei-storage
-                  shareName: ccei-private
-
-            volumeMounts:
-              - name: files-public
-                mountPath: /var/www/html/sites/default/files
-              - name: files-private
-                mountPath: /var/www/private
-
-            initContainers:
-              # Pre-create the media-icons folder
-              - name: init-media-icons-folder
-                image: alpine:3.10
-                command:
-                  - mkdir
-                  - -p
-                  - /files/media-icons/generic
-                volumeMounts:
-                  - name: files-public
-                    mountPath: /files
-
-          nginx:
-            image: ${{ env.REGISTRY_NAME }}.azurecr.io/site-ccei:${{ github.sha }}-nginx
-            imagePullSecrets:
-              - ${{ env.REGISTRY_NAME }}-registry-connection
-
-            # kubectl create secret generic ccei-storage --from-literal=azurestorageaccountname=$STORAGE_ACCOUNT_NAME --from-literal=azurestorageaccountkey=$STORAGE_KEY -n $NAMESPACE
-            volumes:
-              - name: files-public
-                azureFile:
-                  secretName: ccei-storage
-                  shareName: ccei-public
-              - name: files-private
-                azureFile:
-                  secretName: ccei-storage
-                  shareName: ccei-private
-
-            volumeMounts:
-              - name: files-public
-                mountPath: /var/www/html/sites/default/files
-              - name: files-private
-                mountPath: /var/www/private
-
-          mysql:
-            imageTag: 5.7.28
-
-            mysqlPassword: ${{ secrets.MYSQL_PASSWORD }}
-            mysqlRootPassword: ${{ secrets.MYSQL_ROOT_PASSWORD }}
-
-            persistence:
-              enabled: true
-              storageClass: managed-premium
-              size: 256Gi
-
-          files:
-            provider: none
-
-          minio:
-            enabled: false
+          ingress.hosts[0]:${{ secrets.INGRESS_HOST }}
+          ingress.path:/*
+          drupal.image:${{ env.REGISTRY_NAME }}.azurecr.io/site-ccei:${{ github.sha }}
+          drupal.imagePullSecrets[0]:${{ env.REGISTRY_NAME }}-registry-connection
+          drupal.disableDefaultFilesMount:true
+          drupal.volumes[0].name:files-public
+          drupal.volumes[0].azureFile.secretName:ccei-storage
+          drupal.volumes[0].azureFile.shareName:ccei-public
+          drupal.volumes[1].name:files-private
+          drupal.volumes[1].azureFile.secretName:ccei-storage
+          drupal.volumes[1].azureFile.shareName:ccei-private
+          drupal.volumeMounts[0].name:files-public
+          drupal.volumeMounts[0].mountPath:/var/www/html/sites/default/files
+          drupal.volumeMounts[1].name:files-private
+          drupal.volumeMounts[1].mountPath:/var/www/private
+          drupal.initContainers[0].name:init-media-icons-folder
+          drupal.initContainers[0].image:alpine:3.10
+          drupal.initContainers[0].command[0]:mkdir
+          drupal.initContainers[0].command[1]:-p
+          drupal.initContainers[0].command[2]:/files/media-icons/generic
+          drupal.initContainers[0].volumeMounts[0].name:files-public
+          drupal.initContainers[0].volumeMounts[0].mountPath:/files
+          nginx.imageimage:${{ env.REGISTRY_NAME }}.azurecr.io/site-ccei:${{ github.sha }}-nginx
+          nginx.imagePullSecrets[0]:${{ env.REGISTRY_NAME }}-registry-connection
+          nginx.volumes[0].name:files-public
+          nginx.volumes[0].azureFile.secretName:ccei-storage
+          nginx.volumes[0].azureFile.shareName:ccei-public
+          drupal.volumeMounts[0].name:files-public
+          drupal.volumeMounts[0].mountPath:/var/www/html/sites/default/files
+          mysql.imageTag:5.7.28
+          mysql.mysqlPassword:${{ secrets.MYSQL_PASSWORD }}
+          mysql.mysqlRootPassword: ${{ secrets.MYSQL_ROOT_PASSWORD }}
+          mysql.persistence.enabled:true
+          mysql.persistence.storageClass:managed-premium
+          mysql.persistence.size:256Gi
+          files.provider:none
+          minio.enabled:false
       id: bake
     # Deploy app to AKS
     - uses: azure/k8s-deploy@v1
