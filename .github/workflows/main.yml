@@ -83,6 +83,7 @@ jobs:
           drupal.password:${{ secrets.DRUPAL_PASSWORD }}
           drupal.profile:ccei
           drupal.wxtTheme:theme-gcweb
+          drupal.reconfigure:false
           drupal.extraInstallScripts:drush en ccei_ext_migration -y; drush migrate:import --group ccei
           drupal.disableDefaultFilesMount:true
           drupal.volumes[0].name:files-public
