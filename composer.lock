@@ -14104,12 +14104,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StatCan/ccei.git",
-                "reference": "f75adf492cf15200f36df5d85864f14a7a922da9"
+                "reference": "55beecdfaa980def561a0bdcd582fe032c9d36c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StatCan/ccei/zipball/f75adf492cf15200f36df5d85864f14a7a922da9",
-                "reference": "f75adf492cf15200f36df5d85864f14a7a922da9",
+                "url": "https://api.github.com/repos/StatCan/ccei/zipball/55beecdfaa980def561a0bdcd582fe032c9d36c7",
+                "reference": "55beecdfaa980def561a0bdcd582fe032c9d36c7",
                 "shasum": ""
             },
             "require": {
@@ -14209,7 +14209,7 @@
                 "source": "https://github.com/StatCan/ccei/tree/8.x-1.x",
                 "issues": "https://github.com/StatCan/ccei/issues"
             },
-            "time": "2020-03-20T05:05:18+00:00"
+            "time": "2020-03-20T16:06:30+00:00"
         },
         {
             "name": "webflo/drupal-finder",
