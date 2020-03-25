@@ -49,7 +49,8 @@
         },
         {
             "type": "vcs",
-            "url": "https://github.com/StatCan/ccei.git"
+            "url": "https://github.com/StatCan/ccei.git",
+            "no-api": true
         }
     ],
     "scripts": {
