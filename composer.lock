@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "50f2193f27f4749ea161924cef30c8cf",
+    "content-hash": "1345f373569b762ad599ad30586da7fc",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -178,16 +178,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.134.0",
+            "version": "3.134.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "480d4df4b7974666fa7c5e3df564d01f4f29663f"
+                "reference": "aefab57896b558634d24342bdc3c6814e8e533f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/480d4df4b7974666fa7c5e3df564d01f4f29663f",
-                "reference": "480d4df4b7974666fa7c5e3df564d01f4f29663f",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/aefab57896b558634d24342bdc3c6814e8e533f6",
+                "reference": "aefab57896b558634d24342bdc3c6814e8e533f6",
                 "shasum": ""
             },
             "require": {
@@ -258,14 +258,14 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-03-31T18:12:13+00:00"
+            "time": "2020-04-01T18:14:23+00:00"
         },
         {
             "name": "bower-asset/cropper",
             "version": "v2.3.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/fengyuanchen/cropper.git",
+                "url": "git@github.com:fengyuanchen/cropper.git",
                 "reference": "30c58b29ee21010e17e58ebab165fbd84285c685"
             },
             "dist": {
@@ -283,7 +283,7 @@
             "version": "v5.7.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/enyo/dropzone.git",
+                "url": "git@github.com:enyo/dropzone.git",
                 "reference": "5b82186d5f18540a1d13b6f4914fdc6220617ef5"
             },
             "dist": {
@@ -298,7 +298,7 @@
             "version": "3.4.1",
             "source": {
                 "type": "git",
-                "url": "git@github.com:jquery/jquery-dist.git",
+                "url": "https://github.com/jquery/jquery-dist.git",
                 "reference": "15bc73803f76bc53b654b9fdbbbc096f56d7c03d"
             },
             "dist": {
@@ -1585,20 +1585,21 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "v1.8.0",
+            "version": "1.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "904dca4eb10715b92569fbcd79e201d5c349b6bc"
+                "reference": "5eb79f3dbdffed6544e1fc287572c0f462bd29bb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/904dca4eb10715b92569fbcd79e201d5c349b6bc",
-                "reference": "904dca4eb10715b92569fbcd79e201d5c349b6bc",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/5eb79f3dbdffed6544e1fc287572c0f462bd29bb",
+                "reference": "5eb79f3dbdffed6544e1fc287572c0f462bd29bb",
                 "shasum": ""
             },
             "require": {
                 "doctrine/lexer": "1.*",
+                "ext-tokenizer": "*",
                 "php": "^7.1"
             },
             "require-dev": {
@@ -1608,7 +1609,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.7.x-dev"
+                    "dev-master": "1.9.x-dev"
                 }
             },
             "autoload": {
@@ -1649,7 +1650,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2019-10-01T18:55:10+00:00"
+            "time": "2020-04-02T12:33:25+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -2733,7 +2734,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/blog.git",
-                "reference": "4904732163af4f4264c760dc36190de1b6fa1806"
+                "reference": "43a2171"
             },
             "require": {
                 "drupal/core": "*"
@@ -2745,7 +2746,7 @@
                 },
                 "drupal": {
                     "version": "8.x-2.x-dev",
-                    "datestamp": "1585744265",
+                    "datestamp": "1585786601",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Project has not opted into security advisory coverage!"
@@ -2782,7 +2783,7 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/blog"
             },
-            "time": "2020-04-01T12:41:50+00:00"
+            "time": "2016-12-29T10:40:43+00:00"
         },
         {
             "name": "drupal/bootstrap",
@@ -7174,20 +7175,20 @@
         },
         {
             "name": "drupal/openapi",
-            "version": "2.0.0-rc1",
+            "version": "2.0.0-rc2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/openapi.git",
-                "reference": "8.x-2.0-rc1"
+                "reference": "8.x-2.0-rc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/openapi-8.x-2.0-rc1.zip",
-                "reference": "8.x-2.0-rc1",
-                "shasum": "d7807499f2415ab764747dd9c17a471496754c4f"
+                "url": "https://ftp.drupal.org/files/projects/openapi-8.x-2.0-rc2.zip",
+                "reference": "8.x-2.0-rc2",
+                "shasum": "6a23b48ec9aa8a83fe7c439d56700944cf47a25f"
             },
             "require": {
-                "drupal/core": "*"
+                "drupal/core": "^8.7.0 || ^9"
             },
             "require-dev": {
                 "vijaycs85/drupal-quality-checker": "^1.2"
@@ -7198,8 +7199,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-rc1",
-                    "datestamp": "1573468387",
+                    "version": "8.x-2.0-rc2",
+                    "datestamp": "1585778115",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
@@ -7303,21 +7304,21 @@
         },
         {
             "name": "drupal/openapi_rest",
-            "version": "2.0.0-rc1",
+            "version": "2.0.0-rc2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/openapi_rest.git",
-                "reference": "8.x-2.0-rc1"
+                "reference": "8.x-2.0-rc2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/openapi_rest-8.x-2.0-rc1.zip",
-                "reference": "8.x-2.0-rc1",
-                "shasum": "98f5cfe9b7cb73e9750fcdf8047d18d5c6a2eb16"
+                "url": "https://ftp.drupal.org/files/projects/openapi_rest-8.x-2.0-rc2.zip",
+                "reference": "8.x-2.0-rc2",
+                "shasum": "900118dea679f0d9e2f2c92eb2744e6793494adb"
             },
             "require": {
-                "drupal/core": "~8.0",
-                "drupal/openapi": "^2",
+                "drupal/core": "^8 || ^9",
+                "drupal/openapi": "^2.0",
                 "drupal/schemata": "*",
                 "drupal/schemata_json_schema": "*"
             },
@@ -7327,8 +7328,8 @@
                     "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-2.0-rc1",
-                    "datestamp": "1573467785",
+                    "version": "8.x-2.0-rc2",
+                    "datestamp": "1585779664",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "RC releases are not covered by Drupal security advisories."
@@ -8223,20 +8224,20 @@
         },
         {
             "name": "drupal/schemata",
-            "version": "1.0.0-beta1",
+            "version": "1.0.0-beta2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/schemata.git",
-                "reference": "8.x-1.0-beta1"
+                "reference": "8.x-1.0-beta2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/schemata-8.x-1.0-beta1.zip",
-                "reference": "8.x-1.0-beta1",
-                "shasum": "01766a4dc44e1b2a0ce7baae4d67e0f572c0f72f"
+                "url": "https://ftp.drupal.org/files/projects/schemata-8.x-1.0-beta2.zip",
+                "reference": "8.x-1.0-beta2",
+                "shasum": "c50bc45c370073224877a8c72e6d8d5b2ec732d3"
             },
             "require": {
-                "drupal/core": "*"
+                "drupal/core": "^8 || ^9"
             },
             "require-dev": {
                 "drupal/coder": "^8.2",
@@ -8250,8 +8251,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta1",
-                    "datestamp": "1560865981",
+                    "version": "8.x-1.0-beta2",
+                    "datestamp": "1585777919",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -8326,9 +8327,9 @@
         },
         {
             "name": "drupal/schemata_json_schema",
-            "version": "1.0.0-beta1",
+            "version": "1.0.0-beta2",
             "require": {
-                "drupal/core": "~8.0",
+                "drupal/core": "^8 || ^9",
                 "drupal/schemata": "self.version"
             },
             "type": "metapackage",
@@ -8337,8 +8338,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta1",
-                    "datestamp": "1560865981",
+                    "version": "8.x-1.0-beta2",
+                    "datestamp": "1585777919",
                     "security-coverage": {
                         "status": "not-covered",
                         "message": "Beta releases are not covered by Drupal security advisories."
@@ -14481,12 +14482,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StatCan/ccei.git",
-                "reference": "33f168e28ca83369ecf2cbb839e4b99d3052d3e3"
+                "reference": "3059d834e4f1a850ef1f403a6c6fe763b4bfc7af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StatCan/ccei/zipball/33f168e28ca83369ecf2cbb839e4b99d3052d3e3",
-                "reference": "33f168e28ca83369ecf2cbb839e4b99d3052d3e3",
+                "url": "https://api.github.com/repos/StatCan/ccei/zipball/3059d834e4f1a850ef1f403a6c6fe763b4bfc7af",
+                "reference": "3059d834e4f1a850ef1f403a6c6fe763b4bfc7af",
                 "shasum": ""
             },
             "require": {
@@ -14588,7 +14589,7 @@
                 "GPL-2.0+"
             ],
             "description": "Project template for Drupal 8 sites built with the WxT distribution.",
-            "time": "2020-04-01T14:31:54+00:00"
+            "time": "2020-04-02T15:42:46+00:00"
         },
         {
             "name": "webflo/drupal-finder",
@@ -18963,6 +18964,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "wcms/ccei": 20,
+        "drupal/blog": 20,
         "phpmd/phpmd": 0
     },
     "prefer-stable": true,
