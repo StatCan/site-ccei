@@ -131,7 +131,8 @@
         "drush/drush": "^9.0",
         "acquia/lightning": "4.1.3",
         "wcms/ccei": "dev-8.x-1.x",
-        "symfony/event-dispatcher": "4.3.9 as 3.4.99"
+        "symfony/event-dispatcher": "4.3.9 as 3.4.99",
+        "drupal/blog": "dev-2.x#43a2171"
     },
     "autoload": {
         "classmap": [
