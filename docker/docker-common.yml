@@ -114,16 +114,7 @@ services:
     container_name: ${DOCKER_NAME}_nginx
 
   nginx_ci:
-    build:
-      context: images/nginx
-      args:
-        - BASE_IMAGE=${BASE_IMAGE}
-        - http_proxy=${HTTP_PROXY}
-        - https_proxy=${HTTP_PROXY}
-        - HTTP_PROXY=${HTTP_PROXY}
-        - HTTPS_PROXY=${HTTP_PROXY}
-        - NO_PROXY=${NO_PROXY}
-        - no_proxy=${NO_PROXY}
+    image: wcms/${DOCKER_IMAGE}-nginx:latest
     volumes:
       - files_data:/var/www/html/sites/default/files
       - ./conf/nginx.conf:/etc/nginx/nginx.conf:ro

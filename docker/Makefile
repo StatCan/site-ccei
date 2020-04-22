@@ -28,9 +28,15 @@ clean_composer:
 	rm -f composer.lock
 	composer clear-cache
 
+clean_ci:
+        # Don't delete the ci folder for now, as we don't have it inherited on github (form another repo).
+	#rm -rf .gitlab-ci
+	#git clone $(CI_REPO) .gitlab-ci
+
 clean_docker:
-	# Don't delete docker folder for now, as we don't have it inherited on github (form another repo).
-	# rm -rf docker
+        # Don't delete docker folder for now, as we don't have it inherited on github (form another repo).
+        #rm -rf docker
+	#git clone $(DOCKER_REPO) docker
 	[ "$(shell docker images -q --filter "dangling=true")" = "" ] || docker rmi -f $(shell docker images -q --filter "dangling=true")
 	[ "$(shell docker ps -a -q -f name=${DOCKER_NAME}_)" = "" ] || docker rm -f $(shell docker ps -a -q -f name=${DOCKER_NAME}_)
 	[ "$(shell docker images -q -f reference=${DOCKER_IMAGE}_*)" = "" ] || docker rmi -f $(shell docker images -q -f reference=*${DOCKER_IMAGE}_*)

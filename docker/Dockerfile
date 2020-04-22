@@ -13,7 +13,7 @@ HEALTHCHECK --interval=5s --timeout=10s --start-period=5s --retries=3 CMD [ "php
 
 # Install additional extensions
 RUN apk --update add --no-cache bash=5.0.11-r1 \
-                                git=2.24.2-r1 \
+                                git \
                                 gzip=1.10-r0 \
                                 mysql-client=10.4.12-r0 \
                                 patch=2.7.6-r6 \
@@ -69,7 +69,8 @@ COPY scripts/ScriptHandler.php /var/www/scripts/ScriptHandler.php
 COPY composer.json /var/www/composer.json
 COPY composer.lock /var/www/composer.lock
 WORKDIR /var/www
-RUN composer global require "hirak/prestissimo:^0.3"; \
+RUN composer config -g -- http-basic.gitlab.com ${GIT_USERNAME} ${GIT_PASSWORD}; \
+    composer global require "hirak/prestissimo:^0.3"; \
     composer install --prefer-dist \
                      --no-interaction
 
