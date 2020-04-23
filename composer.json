@@ -103,7 +103,12 @@
         "patchLevel": {
             "drupal/core": "-p2"
         },
-        "patches": {},
+        "patches": {
+            "drupal/iframe":{
+                "3129802 - Fix undefined index issues":
+                "https://www.drupal.org/files/issues/2020-04-23/iframe-undefined-index-url-3129802-3.patch"
+            }
+        },
         "patches-ignore": {
             "acquia/lightning": {
                 "drupal/core": {
@@ -120,10 +125,6 @@
                     "2914389 - Allow profiles to exclude dependencies of their parent":
                     "https://www.drupal.org/files/issues/2018-07-09/2914389-8-do-not-test.patch"
                 }
-            },
-            "drupal/iframe":{
-              "3129802 - Fix undefined index issues":
-              "https://www.drupal.org/files/issues/2020-04-23/iframe-undefined-index-url-3129802-3.patch"
             }
         }
     },
@@ -138,7 +139,7 @@
         "wcms/ccei": "dev-8.x-1.x",
         "symfony/event-dispatcher": "4.3.9 as 3.4.99",
         "drupal/blog": "dev-2.x#43a2171",
-        "drupal/iframe": "dev-2.x#e84e17ba"
+        "drupal/iframe": "dev-2.x#e84e17ba as 2.5"
     },
     "autoload": {
         "classmap": [
