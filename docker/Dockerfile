@@ -69,8 +69,7 @@ COPY scripts/ScriptHandler.php /var/www/scripts/ScriptHandler.php
 COPY composer.json /var/www/composer.json
 COPY composer.lock /var/www/composer.lock
 WORKDIR /var/www
-RUN composer config -g -- http-basic.gitlab.com ${GIT_USERNAME} ${GIT_PASSWORD}; \
-    composer global require "hirak/prestissimo:^0.3"; \
+RUN composer global require "hirak/prestissimo:^0.3"; \
     composer install --prefer-dist \
                      --no-interaction
 
