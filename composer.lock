@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "936d40b5a422305becc3c74ebe0f4773",
+    "content-hash": "158acd8dc0cf870f86ab6aec4a6743b1",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -5064,6 +5064,48 @@
             }
         },
         {
+            "name": "drupal/iframe",
+            "version": "dev-2.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/iframe.git",
+                "reference": "e84e17ba"
+            },
+            "require": {
+                "drupal/core": "^8 || ^9"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.4+3-dev",
+                    "datestamp": "1587598182",
+                    "security-coverage": {
+                        "status": "not-covered",
+                        "message": "Dev releases are not covered by Drupal security advisories."
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "neffets",
+                    "homepage": "https://www.drupal.org/user/340152"
+                }
+            ],
+            "description": "Defines a simple iframe field type.",
+            "homepage": "https://www.drupal.org/project/iframe",
+            "support": {
+                "source": "https://git.drupalcode.org/project/iframe"
+            },
+            "time": "2020-04-22T23:29:18+00:00"
+        },
+        {
             "name": "drupal/image_widget_crop",
             "version": "2.3.0",
             "source": {
@@ -9976,6 +10018,9 @@
                             "2914389 - Allow profiles to exclude dependencies of their parent": "https://www.drupal.org/files/issues/2018-07-09/2914389-8-do-not-test.patch"
                         }
                     }
+                },
+                "patches_applied": {
+                    "3130149 - Patch to support wxt-cex for drush 9": "https://www.drupal.org/files/issues/2020-04-22/wxt-port-wxt-cex-to-drush-9-3130149-2.patch"
                 }
             },
             "autoload": {
@@ -14228,18 +14273,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StatCan/ccei.git",
-                "reference": "c1eb2391aaf1053784514275499c310cb09df906"
+                "reference": "805cf0d6e8cb0aadc8c630d5b88d3eed4cbb9951"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StatCan/ccei/zipball/c1eb2391aaf1053784514275499c310cb09df906",
-                "reference": "c1eb2391aaf1053784514275499c310cb09df906",
+                "url": "https://api.github.com/repos/StatCan/ccei/zipball/805cf0d6e8cb0aadc8c630d5b88d3eed4cbb9951",
+                "reference": "805cf0d6e8cb0aadc8c630d5b88d3eed4cbb9951",
                 "shasum": ""
             },
             "require": {
                 "acquia/lightning": "4.1.3",
                 "composer/installers": "^1.2",
                 "cweagans/composer-patches": "^1.6.7",
+                "drupal/iframe": "^2.4",
                 "drupalwxt/wxt": "3.0.8",
                 "nxp/math-executor": "^1.1"
             },
@@ -14306,6 +14352,9 @@
                 "patches": {
                     "drupal/jsonapi": {
                         "3034626 - Fatal error after security update without updating Drupal core.": "https://www.drupal.org/files/issues/2019-02-21/fatal_error_after_updating_the_module-3034626-2.patch"
+                    },
+                    "drupalwxt/wxt": {
+                        "3130149 - Patch to support wxt-cex for drush 9": "https://www.drupal.org/files/issues/2020-04-22/wxt-port-wxt-cex-to-drush-9-3130149-2.patch"
                     }
                 },
                 "patches-ignore": {
@@ -14336,7 +14385,7 @@
                 "GPL-2.0+"
             ],
             "description": "Project template for Drupal 8 sites built with the WxT distribution.",
-            "time": "2020-04-23T02:29:00+00:00"
+            "time": "2020-04-23T10:25:16+00:00"
         },
         {
             "name": "webflo/drupal-finder",
@@ -15654,6 +15703,16 @@
                 "autoload",
                 "dependency",
                 "package"
+            ],
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-04-10T09:44:22+00:00"
         },
@@ -18684,6 +18743,7 @@
     "stability-flags": {
         "wcms/ccei": 20,
         "drupal/blog": 20,
+        "drupal/iframe": 20,
         "phpmd/phpmd": 0
     },
     "prefer-stable": true,
