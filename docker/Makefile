@@ -20,7 +20,7 @@ behat:
 build: all
 
 clean: clean_composer clean_ci clean_docker
-	rm -rf files_private
+	sudo rm -rf files_private
 
 clean_composer:
 	sudo rm -rf html
