@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "158acd8dc0cf870f86ab6aec4a6743b1",
+    "content-hash": "c7ded82de5e3828a52d00464765f88ed",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -5086,6 +5086,9 @@
                         "status": "not-covered",
                         "message": "Dev releases are not covered by Drupal security advisories."
                     }
+                },
+                "patches_applied": {
+                    "3129802 - Fix undefined index issues": "https://www.drupal.org/files/issues/2020-04-23/iframe-undefined-index-url-3129802-3.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -18737,6 +18740,12 @@
             "alias_normalized": "3.4.99.0",
             "version": "4.3.9.0",
             "package": "symfony/event-dispatcher"
+        },
+        {
+            "alias": "2.5",
+            "alias_normalized": "2.5.0.0",
+            "version": "dev-2.x",
+            "package": "drupal/iframe"
         }
     ],
     "minimum-stability": "dev",
