@@ -106,7 +106,7 @@
         "patches": {
             "drupal/iframe":{
                 "3129802 - Fix undefined index issues":
-                "https://www.drupal.org/files/issues/2020-04-23/iframe-undefined-index-url-3129802-3.patch"
+                "https://www.drupal.org/files/issues/2020-04-27/iframe-undefined-index-url-3129802-4.patch"
             }
         },
         "patches-ignore": {
