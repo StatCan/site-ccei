@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "93b8f72ebc9f671445512e3c38ef12c1",
+    "content-hash": "936d40b5a422305becc3c74ebe0f4773",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -178,16 +178,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.136.0",
+            "version": "3.137.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "223e616d5eda2e60c338279c3b0136455f74f7d0"
+                "reference": "e92ed36668dd546041714d3d1c520d6206423ab3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/223e616d5eda2e60c338279c3b0136455f74f7d0",
-                "reference": "223e616d5eda2e60c338279c3b0136455f74f7d0",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/e92ed36668dd546041714d3d1c520d6206423ab3",
+                "reference": "e92ed36668dd546041714d3d1c520d6206423ab3",
                 "shasum": ""
             },
             "require": {
@@ -258,7 +258,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-04-29T19:14:20+00:00"
+            "time": "2020-04-30T18:16:22+00:00"
         },
         {
             "name": "bower-asset/cropper",
@@ -5081,30 +5081,30 @@
         },
         {
             "name": "drupal/iframe",
-            "version": "dev-2.x",
+            "version": "2.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/iframe.git",
-                "reference": "e84e17ba"
+                "reference": "8.x-2.5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/iframe-8.x-2.5.zip",
+                "reference": "8.x-2.5",
+                "shasum": "5c0213627c6a0b92eb5e3377890d545a253a6372"
             },
             "require": {
                 "drupal/core": "^8 || ^9"
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-2.x": "2.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-2.4+3-dev",
-                    "datestamp": "1587598182",
+                    "version": "8.x-2.5",
+                    "datestamp": "1587598808",
                     "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Dev releases are not covered by Drupal security advisories."
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
                     }
-                },
-                "patches_applied": {
-                    "3129802 - Fix undefined index issues": "https://www.drupal.org/files/issues/2020-04-27/iframe-undefined-index-url-3129802-4.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -5121,8 +5121,7 @@
             "homepage": "https://www.drupal.org/project/iframe",
             "support": {
                 "source": "https://git.drupalcode.org/project/iframe"
-            },
-            "time": "2020-04-22T23:29:18+00:00"
+            }
         },
         {
             "name": "drupal/image_widget_crop",
@@ -7079,9 +7078,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-4.x": "4.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-4.5",
                     "datestamp": "1574693285",
@@ -7914,9 +7910,6 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
                 "drupal": {
                     "version": "8.x-1.11",
                     "datestamp": "1581850829",
@@ -8661,17 +8654,17 @@
         },
         {
             "name": "drupal/simple_oauth",
-            "version": "4.4.0",
+            "version": "4.5.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupalcode.org/project/simple_oauth.git",
-                "reference": "8.x-4.4"
+                "reference": "8.x-4.5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/simple_oauth-8.x-4.4.zip",
-                "reference": "8.x-4.4",
-                "shasum": "05cf0743aaff1d9059305de55e934d98bfe9ba1e"
+                "url": "https://ftp.drupal.org/files/projects/simple_oauth-8.x-4.5.zip",
+                "reference": "8.x-4.5",
+                "shasum": "e453816aeb9e7c3a2d83dcb3eff855f27b365546"
             },
             "require": {
                 "drupal/consumers": "^1.2",
@@ -8681,12 +8674,9 @@
             },
             "type": "drupal-module",
             "extra": {
-                "branch-alias": {
-                    "dev-4.x": "4.x-dev"
-                },
                 "drupal": {
-                    "version": "8.x-4.4",
-                    "datestamp": "1581420966",
+                    "version": "8.x-4.5",
+                    "datestamp": "1588250233",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -10047,7 +10037,7 @@
                     }
                 },
                 "patches_applied": {
-                    "3130149 - Patch to support wxt-cex for drush 9": "https://www.drupal.org/files/issues/2020-04-22/wxt-port-wxt-cex-to-drush-9-3130149-2.patch"
+                    "3130149 - Patch to support wxt-cex for drush 9": "https://www.drupal.org/files/issues/2020-05-01/wxt-port-wxt-cex-to-drush-9-3130149-3.patch"
                 }
             },
             "autoload": {
@@ -14451,12 +14441,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StatCan/ccei.git",
-                "reference": "8014cde46026edd73dbeea4232c0e5805d2f9898"
+                "reference": "66eadb4d6d1a49462f4dd0a57aec169c081f6ed1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StatCan/ccei/zipball/8014cde46026edd73dbeea4232c0e5805d2f9898",
-                "reference": "8014cde46026edd73dbeea4232c0e5805d2f9898",
+                "url": "https://api.github.com/repos/StatCan/ccei/zipball/66eadb4d6d1a49462f4dd0a57aec169c081f6ed1",
+                "reference": "66eadb4d6d1a49462f4dd0a57aec169c081f6ed1",
                 "shasum": ""
             },
             "require": {
@@ -14532,7 +14522,7 @@
                         "3034626 - Fatal error after security update without updating Drupal core.": "https://www.drupal.org/files/issues/2019-02-21/fatal_error_after_updating_the_module-3034626-2.patch"
                     },
                     "drupalwxt/wxt": {
-                        "3130149 - Patch to support wxt-cex for drush 9": "https://www.drupal.org/files/issues/2020-04-22/wxt-port-wxt-cex-to-drush-9-3130149-2.patch"
+                        "3130149 - Patch to support wxt-cex for drush 9": "https://www.drupal.org/files/issues/2020-05-01/wxt-port-wxt-cex-to-drush-9-3130149-3.patch"
                     }
                 },
                 "patches-ignore": {
@@ -14563,7 +14553,7 @@
                 "GPL-2.0+"
             ],
             "description": "Project template for Drupal 8 sites built with the WxT distribution.",
-            "time": "2020-04-28T16:01:42+00:00"
+            "time": "2020-05-01T10:50:57+00:00"
         },
         {
             "name": "webflo/drupal-finder",
@@ -18301,20 +18291,20 @@
         },
         {
             "name": "seld/jsonlint",
-            "version": "1.7.2",
+            "version": "1.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/jsonlint.git",
-                "reference": "e2e5d290e4d2a4f0eb449f510071392e00e10d19"
+                "reference": "ff2aa5420bfbc296cf6a0bc785fa5b35736de7c1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/e2e5d290e4d2a4f0eb449f510071392e00e10d19",
-                "reference": "e2e5d290e4d2a4f0eb449f510071392e00e10d19",
+                "url": "https://api.github.com/repos/Seldaek/jsonlint/zipball/ff2aa5420bfbc296cf6a0bc785fa5b35736de7c1",
+                "reference": "ff2aa5420bfbc296cf6a0bc785fa5b35736de7c1",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.3 || ^7.0"
+                "php": "^5.3 || ^7.0 || ^8.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
@@ -18346,7 +18336,17 @@
                 "parser",
                 "validator"
             ],
-            "time": "2019-10-24T14:27:39+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/Seldaek",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/seld/jsonlint",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-04-30T19:05:18+00:00"
         },
         {
             "name": "seld/phar-utils",
@@ -18943,19 +18943,12 @@
             "alias_normalized": "3.4.99.0",
             "version": "4.3.9.0",
             "package": "symfony/event-dispatcher"
-        },
-        {
-            "alias": "2.5",
-            "alias_normalized": "2.5.0.0",
-            "version": "dev-2.x",
-            "package": "drupal/iframe"
         }
     ],
     "minimum-stability": "dev",
     "stability-flags": {
         "wcms/ccei": 20,
         "drupal/blog": 20,
-        "drupal/iframe": 20,
         "phpmd/phpmd": 0
     },
     "prefer-stable": true,
