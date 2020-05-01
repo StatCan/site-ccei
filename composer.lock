@@ -14441,12 +14441,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StatCan/ccei.git",
-                "reference": "66eadb4d6d1a49462f4dd0a57aec169c081f6ed1"
+                "reference": "4356b29edb2563f5a8c53efc477689264c7e0e2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StatCan/ccei/zipball/66eadb4d6d1a49462f4dd0a57aec169c081f6ed1",
-                "reference": "66eadb4d6d1a49462f4dd0a57aec169c081f6ed1",
+                "url": "https://api.github.com/repos/StatCan/ccei/zipball/4356b29edb2563f5a8c53efc477689264c7e0e2f",
+                "reference": "4356b29edb2563f5a8c53efc477689264c7e0e2f",
                 "shasum": ""
             },
             "require": {
@@ -14553,7 +14553,7 @@
                 "GPL-2.0+"
             ],
             "description": "Project template for Drupal 8 sites built with the WxT distribution.",
-            "time": "2020-05-01T10:50:57+00:00"
+            "time": "2020-05-01T15:46:40+00:00"
         },
         {
             "name": "webflo/drupal-finder",
