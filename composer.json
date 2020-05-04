@@ -51,7 +51,19 @@
             "type": "vcs",
             "url": "https://github.com/StatCan/ccei.git",
             "no-api": true
-        }
+        },
+        {
+            "type": "package",
+              "package": {
+              "name": "mdi/materialdesign-webfont",
+              "version": "3.5.94",
+              "type": "drupal-library",
+              "dist": {
+                "url": "https://github.com/Templarian/MaterialDesign-Webfont/archive/v3.5.94.zip",
+                "type": "zip"
+              }
+            }
+         }
     ],
     "scripts": {
         "post-create-project-cmd": "rm -r -f .travis.yml behat.yml .travis-ci",
