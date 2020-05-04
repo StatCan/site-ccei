@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "936d40b5a422305becc3c74ebe0f4773",
+    "content-hash": "c9e76e3c8f424d59755cb5e6a715776f",
     "packages": [
         {
             "name": "acquia/lightning",
@@ -178,16 +178,16 @@
         },
         {
             "name": "aws/aws-sdk-php",
-            "version": "3.137.1",
+            "version": "3.137.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aws/aws-sdk-php.git",
-                "reference": "935060ae3d64f2bfeab7a6ba46bebe525047446c"
+                "reference": "af91c2fc467a326e5bcb5665e4e2ad3d84d28be2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/935060ae3d64f2bfeab7a6ba46bebe525047446c",
-                "reference": "935060ae3d64f2bfeab7a6ba46bebe525047446c",
+                "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/af91c2fc467a326e5bcb5665e4e2ad3d84d28be2",
+                "reference": "af91c2fc467a326e5bcb5665e4e2ad3d84d28be2",
                 "shasum": ""
             },
             "require": {
@@ -258,7 +258,7 @@
                 "s3",
                 "sdk"
             ],
-            "time": "2020-05-01T18:13:22+00:00"
+            "time": "2020-05-04T18:13:52+00:00"
         },
         {
             "name": "bower-asset/cropper",
@@ -11180,6 +11180,15 @@
             "time": "2019-07-25T07:03:26+00:00"
         },
         {
+            "name": "mdi/materialdesign-webfont",
+            "version": "3.5.94",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/Templarian/MaterialDesign-Webfont/archive/v3.5.94.zip"
+            },
+            "type": "drupal-library"
+        },
+        {
             "name": "mkalkbrenner/php-htmldiff-advanced",
             "version": "0.0.8",
             "source": {
@@ -14438,12 +14447,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StatCan/ccei.git",
-                "reference": "7028d6fd7698a6fd95e053951a6a6a7e466325fc"
+                "reference": "6d74cf516bc06e5a631d6039be60abef2b6febd0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StatCan/ccei/zipball/7028d6fd7698a6fd95e053951a6a6a7e466325fc",
-                "reference": "7028d6fd7698a6fd95e053951a6a6a7e466325fc",
+                "url": "https://api.github.com/repos/StatCan/ccei/zipball/6d74cf516bc06e5a631d6039be60abef2b6febd0",
+                "reference": "6d74cf516bc06e5a631d6039be60abef2b6febd0",
                 "shasum": ""
             },
             "require": {
@@ -14452,6 +14461,7 @@
                 "cweagans/composer-patches": "^1.6.7",
                 "drupal/iframe": "^2.4",
                 "drupalwxt/wxt": "3.0.8",
+                "mdi/materialdesign-webfont": "^3.5.94",
                 "nxp/math-executor": "^1.1"
             },
             "require-dev": {
@@ -14550,7 +14560,7 @@
                 "GPL-2.0+"
             ],
             "description": "Project template for Drupal 8 sites built with the WxT distribution.",
-            "time": "2020-05-03T13:15:33+00:00"
+            "time": "2020-05-04T18:48:56+00:00"
         },
         {
             "name": "webflo/drupal-finder",
