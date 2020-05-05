@@ -295,16 +295,16 @@
         },
         {
             "name": "bower-asset/jquery",
-            "version": "3.5.0",
+            "version": "3.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jquery/jquery-dist.git",
-                "reference": "1fd78cd729742aa26f64783f9188e169e41f194e"
+                "reference": "4c0e4becb8263bb5b3e6dadc448d8e7305ef8215"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/1fd78cd729742aa26f64783f9188e169e41f194e",
-                "reference": "1fd78cd729742aa26f64783f9188e169e41f194e"
+                "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/4c0e4becb8263bb5b3e6dadc448d8e7305ef8215",
+                "reference": "4c0e4becb8263bb5b3e6dadc448d8e7305ef8215"
             },
             "type": "bower-asset",
             "license": [
@@ -14447,12 +14447,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/StatCan/ccei.git",
-                "reference": "6d74cf516bc06e5a631d6039be60abef2b6febd0"
+                "reference": "6ef47988f5eea2a5aa2560bd58e3a9e6b450f8e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/StatCan/ccei/zipball/6d74cf516bc06e5a631d6039be60abef2b6febd0",
-                "reference": "6d74cf516bc06e5a631d6039be60abef2b6febd0",
+                "url": "https://api.github.com/repos/StatCan/ccei/zipball/6ef47988f5eea2a5aa2560bd58e3a9e6b450f8e9",
+                "reference": "6ef47988f5eea2a5aa2560bd58e3a9e6b450f8e9",
                 "shasum": ""
             },
             "require": {
@@ -14560,7 +14560,7 @@
                 "GPL-2.0+"
             ],
             "description": "Project template for Drupal 8 sites built with the WxT distribution.",
-            "time": "2020-05-04T18:48:56+00:00"
+            "time": "2020-05-05T08:09:10+00:00"
         },
         {
             "name": "webflo/drupal-finder",
