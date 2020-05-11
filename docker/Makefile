@@ -88,9 +88,7 @@ phpcs: drupal_cs
 	    --ignore=*.txt \
 	    --ignore=*.md \
 	    --ignore=/var/www/html/*/custom/*/*.info.yml \
-	    /var/www/html/profiles/$(PROFILE_NAME)/modules/custom \
-	    /var/www/html/modules/custom \
-	    /var/www/html/themes/custom
+	    /var/www/html/profiles/$(PROFILE_NAME)/modules/custom
 
 	./docker/bin/phpcs --standard=/var/www/html/core/phpcs.xml \
 	    --extensions=php,module,inc,install,test,profile,theme \
