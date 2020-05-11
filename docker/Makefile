@@ -29,13 +29,13 @@ clean_composer:
 	composer clear-cache
 
 clean_ci:
-        # Don't delete the ci folder for now, as we don't have it inherited on github (form another repo).
+	# Don't delete the ci folder for now, as we don't have it inherited on github (form another repo).
 	#rm -rf .gitlab-ci
 	#git clone $(CI_REPO) .gitlab-ci
 
 clean_docker:
-        # Don't delete docker folder for now, as we don't have it inherited on github (form another repo).
-        #rm -rf docker
+	# Don't delete docker folder for now, as we don't have it inherited on github (form another repo).
+	#rm -rf docker
 	#git clone $(DOCKER_REPO) docker
 	[ "$(shell docker images -q --filter "dangling=true")" = "" ] || docker rmi -f $(shell docker images -q --filter "dangling=true")
 	[ "$(shell docker ps -a -q -f name=${DOCKER_NAME}_)" = "" ] || docker rm -f $(shell docker ps -a -q -f name=${DOCKER_NAME}_)
@@ -87,7 +87,6 @@ phpcs: drupal_cs
 	    --ignore=*.css \
 	    --ignore=*.txt \
 	    --ignore=*.md \
-	    --ignore=/var/www/html/modules/custom/wxt_library \
 	    --ignore=/var/www/html/*/custom/*/*.info.yml \
 	    /var/www/html/profiles/$(PROFILE_NAME)/modules/custom \
 	    /var/www/html/modules/custom \
