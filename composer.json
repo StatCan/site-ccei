@@ -91,17 +91,11 @@
                 "type:bower-asset",
                 "type:npm-asset"
             ],
-            "html/modules/custom/{$name}": [
-                "drupal/wxt_library"
-            ],
             "html/modules/contrib/{$name}": [
                 "type:drupal-module"
             ],
             "html/profiles/{$name}": [
                 "type:drupal-profile"
-            ],
-            "html/themes/custom/{$name}": [
-                "drupal/wxt_bootstrap"
             ],
             "html/themes/contrib/{$name}": [
                 "type:drupal-theme"
@@ -140,12 +134,10 @@
         "cweagans/composer-patches": "^1.6.7",
         "oomphinc/composer-installers-extender": "^1.1",
         "drupal/core-composer-scaffold": "*",
-        "drupal/facets": "^1.0",
         "drush/drush": "^9.0",
         "acquia/lightning": "4.1.3",
-        "wcms/ccei": "dev-8.x-1.x",
         "symfony/event-dispatcher": "4.3.9 as 3.4.99",
-        "drupal/blog": "dev-2.x#43a2171"
+        "wcms/ccei": "dev-8.x-1.x"
     },
     "autoload": {
         "classmap": [
