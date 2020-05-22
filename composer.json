@@ -135,7 +135,7 @@
         "oomphinc/composer-installers-extender": "^1.1",
         "drupal/core-composer-scaffold": "*",
         "drush/drush": "^9.0",
-        "acquia/lightning": "4.1.3",
+        "acquia/lightning": "4.1.4",
         "symfony/event-dispatcher": "4.3.9 as 3.4.99",
         "wcms/ccei": "dev-8.x-1.x"
     },
