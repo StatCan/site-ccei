@@ -13,7 +13,7 @@
         "behat/mink-selenium2-driver": "*",
         "bex/behat-screenshot": "~1.2.8",
         "composer/composer": "^1.4",
-        "drupal/coder": "8.3.8",
+        "drupal/coder": "^8.3.8",
         "drupal/console": "~1.9.0",
         "drupal/drupal-extension": "~3.4.1",
         "jcalderonzumba/gastonjs": "~1.0.2",
@@ -82,6 +82,9 @@
             "npm-asset"
         ],
         "installer-paths": {
+            "drush/contrib/{$name}": [
+                "type:drupal-drush"
+            ],
             "html/core": [
                 "type:drupal-core"
             ],
@@ -99,9 +102,6 @@
             ],
             "html/themes/contrib/{$name}": [
                 "type:drupal-theme"
-            ],
-            "drush/contrib/{$name}": [
-                "type:drupal-drush"
             ]
         },
         "composer-exit-on-patch-failure": true,
